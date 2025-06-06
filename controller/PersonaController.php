@@ -13,7 +13,7 @@ class UserController {
         $apellido = $post['apellido'] ?? '';
         $telefono = $post['telefono'] ?? '';
         $email = $post['email'] ?? '';
-        //$cuil = $post['cuil'] ?? '';
+        $cuil = $post['cuil'] ?? '';
 
         $result = [];
 
@@ -41,7 +41,7 @@ class UserController {
         $result['email'] = filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 
         // Validar CUIL: formato XX-XXXXXXXX-X
-        $result['cuil'] = preg_match('/^{11}$/', $cuil) === 1;
+        $result['cuil'] = preg_match('/^\d{11}$/', $cuil) === 1;
 
         // Para retornar true si todo es válido:
         return !in_array(false, $result, true);
