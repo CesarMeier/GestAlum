@@ -132,7 +132,7 @@ require_once ('modelo/Persona.php');
     
     <script src="public/select2/select2.min.js"></script>
     <script src="public/DataTables/datatables.min.js"></script>
-    <script src="public/DataTables/datatables.es-ES.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json"></script>
 
     <script>
         $(document).ready(function () {
